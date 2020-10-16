@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'National';
+  src: url('../fonts/NationalTest-Light.otf') format('opentype'),
+  url('../fonts/national-test-light.woff') format('woff');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National';
+  src: url('../fonts/NationalTest-Book.otf') format('opentype'),
+  url('../fonts/national-test-book.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National';
+  src: url('../fonts/NationalTest-Regular.otf') format('opentype'),
+  url('../fonts/national-test-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National';
+  src: url('../fonts/NationalTest-Medium.otf') format('opentype'),
+  url('../fonts/national-test-medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'National';
+  src: url('../fonts/NationalTest-Semibold.otf') format('opentype'),
+  url('../fonts/national-test-semibold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* body {
+  font-family: 'National', sans-serif;
+} */
