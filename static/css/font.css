@@ -43,6 +43,6 @@
   font-display: swap;
 }
 
-/* body {
-  font-family: 'National', sans-serif;
-} */
+.space-width {
+  width: 100%;
+}

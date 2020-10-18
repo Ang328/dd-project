@@ -14,9 +14,21 @@
           @content;
       }
   }
+
   @else if $breakpoint == "xl" {
-      @media (min-width: 1200px) {
+      @media (min-width: 1250px) {
           @content;
       }
   }
+}
+
+@mixin shadow {
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+@mixin anchor-style {
+    font-weight: 200;
+    font-size: rem(18px);
+    color: $brand-color;
+    text-transform: capitalize;
 }

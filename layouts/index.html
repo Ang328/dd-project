@@ -15,70 +15,79 @@
 
 <body>
   <!-- outmost container -->
-  <div class="container-fluid px-0">
+  <div class="container-fluid px-0" style="max-width: 1500px;">
 
     <!-- nav + main container -->
     <div class="container-fluid d-md-flex px-0">
-
       <!-- sidebar -->
       <section class="sidebar">
         <nav class="navbar p-0 navbar-expand-md">
           <a class="navbar-brand d-block d-md-none my-3" href="#">
             <img src="/images/dd_logo_h_white.svg" height="40" alt='datadog-logo' />
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" id='navbar_toggler'></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav flex-md-column">
-              <a class="navbar-brand d-none d-md-block" href="#">
-                <img src="/images/datadog-logo-v.svg" width='96' height="97" alt='datadog-logo' />
+          <ul class="nav d-none d-md-flex flex-md-column">
+            <a class="navbar-brand d-none d-md-block" href="#">
+              <img src="/images/datadog-logo-v.svg" width='96' height="97" alt='datadog-logo' />
+            </a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <p class='bold mb-0'>product</p>
               </a>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p class='bold mb-0'>product</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p class='bold mb-0'>docs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p class='bold mb-0'>pricing</p>
-                </a>
-              </li>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p class='bold mb-0'>customers</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p class='bold mb-0'>about</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p class='bold mb-0'>blog</p>
-                </a>
-              </li>
-              <li class="nav-item mt-md-5">
-                <a class="nav-link" href="#">
-                  <p class='mb-0 light' style="text-transform: capitalize;">login</p>
-                </a>
-              </li>
-            </ul>
-          </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <p class='bold mb-0'>docs</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <p class='bold mb-0'>pricing</p>
+              </a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <p class='bold mb-0'>customers</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <p class='bold mb-0'>about</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <p class='bold mb-0'>blog</p>
+              </a>
+            </li>
+            <li class="nav-item mt-md-5">
+              <a class="nav-link nav-link__login" href="#">
+                <p class='mb-0 light' style="text-transform: capitalize;">login</p>
+              </a>
+            </li>
+          </ul>
         </nav>
       </section>
       <!-- end of sidebar -->
 
       <!-- main section -->
       <section class="main">
+        <div class="mobile-bg" id="mobile_bg"></div>
+        <div class="mobile-nav" id="mobile_nav">
+          <ul class='p-0 m-0'>
+            <li><a class="mobile-nav__link" href="#">product</a></li>
+            <li><a class="mobile-nav__link" href="#">docs</a></li>
+            <li><a class="mobile-nav__link" href="#">pricing</a></li>
+            <li><a class="mobile-nav__link" href="#">customers</a></li>
+            <li><a class="mobile-nav__link" href="#">about</a></li>
+            <li><a class="mobile-nav__link" href="#">blog</a></li>
+            <li><a class="mobile-nav__link" href="#">login</a></li>
+          </ul>
+        </div>
         <!-- pricing section -->
         <div class="pricing row mx-0 d-lg-flex justify-content-lg-between">
           <!-- heading -->
@@ -109,7 +118,7 @@
                     </ul>
                   </div>
                   <div>
-                    <a class="blue" href="#">see details</a>
+                    <a class="blue" href="#"><span data-content="see details">see details</span></a>
                   </div>
                 </div>
               </div>
@@ -130,7 +139,7 @@
                     </ul>
                   </div>
                   <div>
-                    <a class="green" href="#">see details</a>
+                    <a class="green" href="#"><span data-content="see details">see details</span></a>
                   </div>
                 </div>
               </div>
@@ -151,7 +160,7 @@
                     </ul>
                   </div>
                   <div>
-                    <a class="red" href="#">see details</a>
+                    <a class="red" href="#"><span data-content="see details">see details</span></a>
                   </div>
                 </div>
               </div>
@@ -187,20 +196,79 @@
           </div>
           <!-- end of feature cards -->
           <!-- customers -->
-          <div class="dg_card order-lg-3 content__customer" id='customer_grid'>
+          <div class="dg_card order-lg-3 shadow content__customer" id='customer_grid'>
             <div class="item item__airbnb">
-              <img src="/images/airbnb.png" alt="">
+              <div class="item__wrapper">
+                <img src="/images/airbnb.png" alt="airbnb">
+              </div>
             </div>
-            <div class="item item__adroll item--expand">2</div>
-            <div class="item item__peleton">3</div>
-            <div class="item item__evernote">4</div>
-            <div class="item item__samsung">5</div>
-            <div class="item item__nginx">6</div>
-            <div class="item item__paperduty">7</div>
-            <div class="item item__wholefoods">8</div>
-            <div class="item item__att">9</div>
+            <div class="item item__adroll item--expand">
+              <div class="item__wrapper">
+                <img src="/images/adroll.png" alt="adroll">
+                <p style="margin-bottom: 8px;">“Datadog has been instrumental in managing our real-time infrastructure,
+                  globally distributed in 5
+                  data
+                  centers across hundreds of instances, and thousands of different metrics and dimensions for each host.
+                  I
+                  can't believe there was a time when we didn't have Datadog.”</p>
+                <p class="item__name">Valentino Volonghi</p>
+                <p class="item__position">Chief Technology Officer</p>
+                <a href="#">see more stories</a>
+              </div>
+            </div>
+            <div class="item item__peleton">
+              <div class="item__wrapper">
+                <img src="/images/peloton.png" alt="peloton">
+              </div>
+            </div>
+            <div class="item item__evernote">
+              <div class="item__wrapper">
+                <img src="/images/evernote.png" alt="evernote">
+              </div>
+            </div>
+            <div class="item item__samsung">
+              <div class="item__wrapper">
+                <img src="/images/samsung.png" alt="samsung">
+              </div>
+            </div>
+            <div class="item item__nginx">
+              <div class="item__wrapper">
+                <img src="/images/nginx.png" alt="nginx">
+              </div>
+            </div>
+            <div class="item item__pagerduty">
+              <div class="item__wrapper">
+                <img src="/images/pagerduty.png" alt="pagerduty">
+              </div>
+            </div>
+            <div class="item item__wholefoods">
+              <div class="item__wrapper">
+                <img src="/images/wholefoods.png" alt="wholefoods">
+              </div>
+            </div>
+            <div class="item item__att">
+              <div class="item__wrapper">
+                <img src="/images/at&t.png" alt="att">
+              </div>
+            </div>
           </div>
           <!-- end of customers -->
+          <!-- carousel -->
+          <div class="dg_card order-lg-5 content__carousel">
+            <h6>Observability</h6>
+            <div class="header__wrapper">
+              <h3>With turn-key integrations, Datadog seamlessly aggregates metrics and events across the full devops
+                stack</h3>
+              <img src="/images/arrow.svg" alt="arrow">
+            </div>
+            <a href="#">read more</a>
+
+            <div class="image__wrapper">
+              <img src="/images/home-observability.png" alt="home-observability">
+              <img src="/images/home-dashboards.png" alt="home-dashboards">
+            </div>
+          </div>
+          <!-- end of carousel -->
         </div>
         <!-- end of content section -->
       </section>
@@ -209,7 +277,68 @@
     <!-- end of nav + main container -->
 
     <!-- footer -->
-    <footer>footer</footer>
+    <footer class="pt-5 pb-2">
+      <div class="container">
+        <div class="row mb-0 mb-lg-5">
+          <div class="col-lg-4 pl-lg-5">
+            <a href="" class="btn btn-outline-light btn-block mb-2 mb-lg-4">free trial</a>
+            <p class='footer__dgtext d-none d-lg-block'>© Datadog 2017</p>
+          </div>
+          <div class="col-lg-4 mt-3 mt-lg-0">
+            <p class="footer__title">Product</p>
+            <div class="row">
+              <div class="col-6">
+                <ul class="mt-1 p-0">
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">APM</a></li>
+                  <li><a href="#">Integrations</a></li>
+                  <li><a href="#">Alerts</a></li>
+                  <li><a href="#">API</a></li>
+                  <li><a href="#">Pricing</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="mt-1 p-0">
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Resources</a></li>
+                  <li><a href="#">Security</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-3 mt-lg-0">
+            <div class="row">
+              <div class="col-6">
+                <p class="footer__title">About</p>
+                <ul class="mt-1 p-0">
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Our Team</li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Legal</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <p class="footer__title">Social</p>
+                <ul class="mt-1 p-0">
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Espanol</a></li>
+                  <li><a href="#">Japanese</a></li>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">Twitter</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class='footer__dgtext d-inline-block d-lg-none'>© Datadog 2017</p>
+        <p class='bold footer__bottom d-inline-block d-lg-block m-2 ml-lg-0'><a href="#">Terms</a> | <a
+            href="#">Privacy</a> |
+          <a href="#">Cookies</a></p>
+      </div>
+    </footer>
     <!-- end of footer -->
   </div>
   <!-- end of outmost container -->
