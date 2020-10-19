@@ -1,3 +1,7 @@
-baseURL = "http://example.org/"
+baseURL = "http://angli-datadog.s3-website-us-east-1.amazonaws.com"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "DD Project"
+
+[[deployment.targets]]
+name = "awsbucket"
+URL = "s3://angli-datadog/?region=us-east-1"
